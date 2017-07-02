@@ -1,6 +1,6 @@
-import Data.List (intersperse)
+import qualified Data.List as List
 import Control.Arrow ((>>>))
-import PositionalParser
+import PositionalParser (prepare, consume, finish)
 
 -- Using Currying for customizing
 -- each field size
@@ -17,6 +17,6 @@ parseLine = prepare >>> consumeFirst >>> consumeSecond >>> consumeThird >>> fini
 main = do
   let line = "25101170007089280"
   let fields =  parseLine line -- This yields to a list of fields :: [String]
-  let csvFields = intersperse ";" fields -- Interpolates ";" between fields
+  let csvFields = List.intersperse ";" fields -- Interpolates ";" between fields
   mapM putStr (csvFields ++ ["\n"]) -- Print every field and a line feed at the end
 
