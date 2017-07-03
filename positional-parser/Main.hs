@@ -1,3 +1,5 @@
+module Main where
+
 import qualified Data.List as List
 import Control.Arrow ((>>>))
 import PositionalParser (prepare, consume, finish)
