@@ -3,6 +3,7 @@ My personal [Haskell](https://www.haskell.org/) examples project
 
 ### Related Languages and Tools
 * [Hackage](https://hackage.haskell.org/) - It's the Haskell community central package archive of open source software
+* [The Haskell Tool Stack (Haskell Stack)](https://docs.haskellstack.org/en/stable/README/) - Stack is a cross-platform program for developing Haskell projects
 * [GHC](https://wiki.haskell.org/GHC) - The Glasgow Haskell Compiler
 * [Cabal](https://www.haskell.org/cabal/users-guide/) - It's the standard package system for Haskell software. Eases the configure, build, install pipeline for Haskell apps
   * [Developing Packages](https://www.haskell.org/cabal/users-guide/developing-packages.html#quickstart)
