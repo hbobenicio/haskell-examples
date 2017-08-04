@@ -18,3 +18,8 @@ My personal [Haskell](https://www.haskell.org/) examples project
 
 * [Halcyon](https://halcyon.sh/) - A system for installing Haskell apps and development tools, including GHC and Cabal
   * This project is not updated in a long time (more than 2 years) and it's instalation script is not flexible enough and seems outdated. I'm not recommending this at the moment.
+  
+### Other links
+
+* [a Haskell CheatSheet](http://cheatsheet.codeslower.com/CheatSheet.pdf)
+* [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) - An enciclopedia of Haskell Typeclasses
