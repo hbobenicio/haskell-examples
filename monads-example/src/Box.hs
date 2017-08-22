@@ -10,11 +10,11 @@ instance Functor Box where
   fmap f (Box x) = Box (f x)
 
 instance Applicative Box where
-  pure = Box
-  Box f <*> Box x = Box (f x)
+  pure = Box -- pure = return?
+  Box f <*> Box x = Box (f x) -- <*> = ap ?
 
 instance Monad Box where
-  return x = Box x
+  return x = Box x -- return = Box ?
   (Box x) >>= f = f x
 
 incBox :: (Num t) => t -> Box t
