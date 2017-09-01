@@ -2,19 +2,26 @@ module Main where
 
 import System.Environment (getEnv)
 import Data.List (sort)
+
+import qualified Data.Map as Map -- From the 'containers' library
 import Data.List.Split (splitOn) -- From the 'split' library
 import qualified Data.Set as Set -- From the 'containers' library
 
-expandPath :: String -> [String]
+import qualified Checkpath.Histogram as Histogram
+
+type Path = String
+type PathHistogram = Histogram.Histogram Path
+
+expandPath :: String -> [Path]
 expandPath path = splitOn ":" path
 
-expandPathAndSort :: String -> [String]
+expandPathAndSort :: String -> [Path]
 expandPathAndSort path = sort $ expandPath path
 
-putPathLn :: [String] -> IO ()
+putPathLn :: [Path] -> IO ()
 putPathLn pathList = mapM_ putStrLn formattedPathList
   where
-    indexedPathList = zip [1..] pathList
+    indexedPathList = zip [1..] pathList -- :: [(Int, Path)]
     formattedPathList = map (\(i,s) -> show i ++ ". " ++ s) indexedPathList
 
 hasDuplicates :: (Ord a) => [a] -> Bool
