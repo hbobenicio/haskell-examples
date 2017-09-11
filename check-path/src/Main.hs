@@ -1,20 +1,13 @@
 module Main where
 
-import System.Environment (getEnv)
-import Data.List (sort)
-
--- import qualified Data.Map as Map -- From the 'containers' library
 import Data.List.Split (splitOn) -- From the 'split' library
-import qualified Data.Set as Set -- From the 'containers' library
-
--- import qualified Checkpath.Histogram as Histogram
 import qualified Data.Map.Strict as Map -- From the 'containers' library
-
 import Data.Maybe (fromMaybe) -- Same behaviour as Optional::orElse from java
-
-type Histogram a = Map.Map a Int
+import System.Environment (getEnv)
+import Checkpath.ListUtils (hasDuplicates)
 
 type Path = String
+type Histogram a = Map.Map a Int
 type PathHistogram = Histogram Path
 type PathHistogramItem = (String, Int)
 
@@ -46,10 +39,6 @@ putPathHistogramLn :: PathHistogram -> IO ()
 putPathHistogramLn pathHistogram = mapM_ printPathHistogramItem histogramList
   where
     histogramList = Map.assocs pathHistogram
-
-hasDuplicates :: (Ord a) => [a] -> Bool
-hasDuplicates list = length list /= length set
-  where set = Set.fromList list
 
 histogramFromPathList :: [Path] -> PathHistogram
 histogramFromPathList list = histogramFromPathList' list Map.empty
